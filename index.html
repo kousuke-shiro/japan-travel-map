@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅行記録サイト</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/travel.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/visit.css">
+  <link rel="stylesheet" href="css/records.css">
+  <link rel="stylesheet" href="css/photo.css">
+  <link rel="stylesheet" href="css/record-list.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+
+<body>
+
+  <!-- ログイン画面 -->
+  <div id="login-screen">
+    <h1>旅行記録</h1>
+    <h2>ログイン</h2>
+
+    <div class="form-group">
+      <label for="login-id">ログインID</label>
+      <input type="text" id="login-id" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label for="login-password">パスワード</label>
+      <input type="password" id="login-password" autocomplete="new-password">
+    </div>
+
+    <button id="login-button">ログイン</button>
+    <button id="show-register-button">新規登録</button>
+    <p id="login-message"></p>
+  </div>
+
+
+  <!-- 新規登録画面 -->
+  <div id="register-screen">
+    <h1>旅行記録</h1>
+    <h2>新規登録</h2>
+
+    <div class="form-group">
+      <label for="register-id">ログインID</label>
+      <input type="text" id="register-id" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label for="register-password">パスワード</label>
+      <input type="password" id="register-password" autocomplete="new-password">
+    </div>
+
+    <button id="register-button">登録する</button>
+    <button id="back-login-button">ログイン画面に戻る</button>
+    <p id="register-message"></p>
+  </div>
+
+
+  <!-- 旅行記録画面 -->
+  <div id="travel-screen">
+
+    <h1>旅行記録</h1>
+
+    <p>ログイン中：<span id="user-name"></span></p>
+
+    <button id="logout-button">ログアウト</button>
+
+    <p>訪問済み：<span id="count">0</span> / 47 都道府県</p>
+
+
+    <!-- 全国制覇率 -->
+    <div id="progress-section">
+
+      <h2>全国制覇率</h2>
+
+      <div id="progress-percent">0%</div>
+
+      <div class="progress-bar">
+        <div id="progress-bar-fill"></div>
+      </div>
+
+      <p id="progress-count">0 / 47 都道府県</p>
+
+      <div id="region-progress"></div>
+
+    </div>
+
+
+    <!-- 日本地図 -->
+    <div id="map"></div>
+
+
+    <!-- 旅行記録一覧 -->
+    <button id="toggle-record-button">旅行記録を見る</button>
+
+    <div id="record-list-section">
+
+      <h2>旅行記録一覧</h2>
+
+      <div id="record-list"></div>
+
+    </div>
+
+    <p id="message"></p>
+
+
+    <!-- 都道府県モーダル -->
+    <div id="confirm-modal" class="modal">
+
+      <div class="modal-content">
+
+        <h2 id="modal-title">都道府県</h2>
+
+        <p id="confirm-message"></p>
+
+
+        <!-- 訪問回数 -->
+        <div id="visit-info">
+
+          <h3>訪問回数</h3>
+
+          <div id="visit-count-box">
+            <span id="visit-count">0</span>回
+          </div>
+
+          <div id="visit-buttons">
+
+            <button id="add-visit-button">＋1回訪問を追加</button>
+            <button id="remove-visit-button">−1回訪問を減らす</button>
+
+          </div>
+
+        </div>
+
+
+        <!-- 旅行記録 -->
+        <div id="travel-record-section">
+
+          <h3>旅行記録</h3>
+
+          <div class="record-item">
+            <label for="visit-date">訪問日</label>
+            <input type="date" id="visit-date">
+          </div>
+
+          <div class="record-item">
+            <label for="travel-place">訪れた場所</label>
+            <input type="text" id="travel-place" placeholder="例 : グラバー園、出島、稲佐山">
+          </div>
+
+          <button id="save-record-button">旅行記録を保存</button>
+
+          <div id="travel-record-list"></div>
+
+        </div>
+
+
+        <!-- 写真 -->
+        <div id="photo-section">
+
+          <h3>思い出の写真</h3>
+
+          <input type="file" id="photo-input" accept="image/*" multiple>
+
+          <button id="save-photo-button">写真を追加</button>
+
+          <div id="photo-preview"></div>
+
+        </div>
+
+
+        <!-- モーダルボタン -->
+        <div class="modal-buttons">
+
+          <button id="cancel-button">閉じる</button>
+          <button id="confirm-button">訪問済みにする</button>
+          <button id="unvisit-button">未訪問に戻す</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 写真拡大表示 -->
+    <div id="photo-modal" class="photo-modal">
+
+      <button id="close-photo-modal">×</button>
+
+      <img id="large-photo" src="" alt="拡大写真">
+
+    </div>
+
+  </div>
+
+
+  <script src="js/data.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/photo.js"></script>
+  <script src="js/record.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/visit.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

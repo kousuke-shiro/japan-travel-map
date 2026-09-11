@@ -1,0 +1,109 @@
+/* =========================
+   旅行記録画面
+========================= */
+
+#travel-screen {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 25px 30px 50px;
+  text-align: center;
+}
+
+#travel-screen h1 {
+  margin: 10px 0;
+  font-size: 34px;
+  color: #0ea5e9;
+}
+
+#travel-screen > p:first-of-type {
+  position: absolute;
+  top: 23px;
+  right: -35px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 500;
+}
+
+#logout-button {
+  position: absolute;
+  top: 60px;
+  right: -130px;
+  background: #fda4af;
+  color: white;
+  z-index: 500;
+}
+
+#travel-screen > p:nth-of-type(2) {
+  margin: 10px 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #475569;
+}
+
+
+/* =========================
+   全国制覇率
+========================= */
+
+#progress-section {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+#progress-section h2 {
+  margin: 0 0 10px;
+  color: #0ea5e9;
+  font-size: 22px;
+}
+
+#progress-percent {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0ea5e9;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  overflow: hidden;
+  background: #e2e8f0;
+  border-radius: 20px;
+}
+
+#progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: #38bdf8;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+#progress-count {
+  margin: 10px 0 20px;
+  font-weight: bold;
+  color: #475569;
+}
+
+#region-progress {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.region-progress-item {
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #475569;
+}

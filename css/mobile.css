@@ -1,0 +1,154 @@
+/* =========================
+   スマートフォン
+========================= */
+
+@media (max-width: 600px) {
+
+  #login-screen,
+  #register-screen,
+  #travel-screen {
+    width: 88%;
+    max-width: none;
+    padding: 16px 12px;
+  }
+
+  #login-screen h1,
+  #register-screen h1,
+  #travel-screen h1 {
+    font-size: 23px;
+  }
+
+  #login-screen h2,
+  #register-screen h2 {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 8px 11px;
+  }
+
+  #travel-screen > p:first-of-type {
+    right: 30px;
+  }
+
+  #user-name {
+    position: static;
+  }
+
+  #logout-button {
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  #map {
+    transform: translateY(-5px) scale(0.85);
+    transform-origin: top center;
+  }
+
+  #progress-section {
+    padding: 13px;
+  }
+
+  #progress-section h2 {
+    font-size: 18px;
+  }
+
+  #progress-percent {
+    font-size: 24px;
+  }
+
+  #progress-count {
+    font-size: 13px;
+  }
+
+  #region-progress {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .region-progress-item {
+    padding: 7px;
+    font-size: 12px;
+  }
+
+  .modal-content {
+    width: 86%;
+    max-width: 90%;
+    max-height: 82vh;
+    padding: 15px;
+  }
+
+  .modal-content h2 {
+    font-size: 19px;
+  }
+
+  .modal-content h3 {
+    font-size: 16px;
+  }
+
+  #visit-info {
+    padding: 15px;
+  }
+
+  #visit-buttons {
+    flex-direction: column;
+  }
+
+  #visit-buttons button {
+    width: 100%;
+  }
+
+  #travel-record-section,
+  #photo-section {
+    padding: 15px;
+  }
+
+  .record-card {
+    padding: 12px;
+  }
+
+  .record-card h4 {
+    font-size: 16px;
+  }
+
+  .record-card p {
+    font-size: 14px;
+  }
+
+  .photo-modal {
+    padding: 15px;
+  }
+
+  #large-photo {
+    max-width: 95vw;
+    max-height: 80vh;
+  }
+
+  #close-photo-modal {
+    top: 15px;
+    right: 15px;
+  }
+
+  #toggle-record-button {
+    margin: 5px auto 20px;
+  }
+
+  #record-list-section {
+    margin-top: 20px;
+    padding: 18px;
+  }
+
+  .list-record-card {
+    padding: 14px;
+  }
+
+  .list-record-card h3 {
+    font-size: 18px;
+  }
+}

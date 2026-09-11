@@ -1,0 +1,111 @@
+/* =========================
+   写真
+========================= */
+
+#photo-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+#photo-section h3 {
+  margin-top: 0;
+  color: #475569;
+}
+
+#photo-input {
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#save-photo-button {
+  background: #a78bfa;
+  color: white;
+}
+
+#photo-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#photo-preview img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   モーダルボタン
+========================= */
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 14px;
+}
+
+#cancel-button {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+#confirm-button {
+  background: #38bdf8;
+  color: white;
+}
+
+#unvisit-button {
+  background: #f87171;
+  color: white;
+}
+
+
+/* =========================
+   写真拡大表示
+========================= */
+
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: rgba(15, 23, 42, 0.85);
+  z-index: 2000;
+}
+
+#large-photo {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#close-photo-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  border-radius: 50%;
+  background: white;
+  color: #475569;
+  font-size: 30px;
+  line-height: 45px;
+}

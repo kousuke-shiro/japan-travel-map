@@ -1,0 +1,49 @@
+/* =========================
+   訪問回数
+========================= */
+
+#visit-info {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+#visit-info h3 {
+  margin: 0 0 12px;
+  color: #475569;
+  font-size: 18px;
+}
+
+#visit-count-box {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#visit-count {
+  color: #0ea5e9;
+  font-size: 30px;
+}
+
+#visit-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#visit-buttons button {
+  margin: 0;
+}
+
+#add-visit-button {
+  background: #34d399;
+  color: white;
+}
+
+#remove-visit-button {
+  background: #fb923c;
+  color: white;
+}
