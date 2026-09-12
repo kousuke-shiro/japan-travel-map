@@ -10,71 +10,92 @@
     width: 88%;
     max-width: none;
     padding: 16px 12px;
+    box-sizing: border-box;
   }
 
   #login-screen h1,
   #register-screen h1,
   #travel-screen h1 {
-    font-size: 23px;
+    font-size: clamp(21px, 5.8vw, 23px);
   }
 
   #login-screen h2,
   #register-screen h2 {
-    font-size: 18px;
+    font-size: clamp(17px, 4.8vw, 18px);
   }
 
   input {
-    font-size: 13px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: clamp(12px, 3.5vw, 13px);
     padding: 8px;
   }
 
   button {
-    font-size: 13px;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: clamp(12px, 3.5vw, 13px);
     padding: 8px 11px;
   }
 
   #travel-screen > p:first-of-type {
-    right: 30px;
+    position: static;
+    margin: 0 0 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
   }
 
   #user-name {
     position: static;
+    overflow-wrap: anywhere;
   }
 
   #logout-button {
-    position: static;
-    margin-bottom: 15px;
+    position: absolute;
+    top: 23px;
+    right: 30px;
+    margin: 0;
+    max-width: 100%;
   }
 
   #map {
+    width: 100%;
+    max-width: 100%;
     transform: translateY(-5px) scale(0.85);
     transform-origin: top center;
   }
 
   #progress-section {
+    width: 100%;
+    box-sizing: border-box;
     padding: 13px;
   }
 
   #progress-section h2 {
-    font-size: 18px;
+    font-size: clamp(17px, 4.8vw, 18px);
   }
 
   #progress-percent {
-    font-size: 24px;
+    font-size: clamp(22px, 6.5vw, 24px);
   }
 
   #progress-count {
-    font-size: 13px;
+    font-size: clamp(12px, 3.5vw, 13px);
   }
 
   #region-progress {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
   .region-progress-item {
+    min-width: 0;
+    box-sizing: border-box;
     padding: 7px;
-    font-size: 12px;
+    font-size: clamp(11px, 3.2vw, 12px);
+    overflow-wrap: anywhere;
   }
 
   .modal-content {
@@ -82,47 +103,59 @@
     max-width: 90%;
     max-height: 82vh;
     padding: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .modal-content h2 {
-    font-size: 19px;
+    font-size: clamp(18px, 5vw, 19px);
   }
 
   .modal-content h3 {
-    font-size: 16px;
+    font-size: clamp(15px, 4.3vw, 16px);
   }
 
   #visit-info {
     padding: 15px;
+    box-sizing: border-box;
   }
 
   #visit-buttons {
     flex-direction: column;
+    width: 100%;
   }
 
   #visit-buttons button {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   #travel-record-section,
   #photo-section {
     padding: 15px;
+    box-sizing: border-box;
   }
 
   .record-card {
     padding: 12px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
   }
 
   .record-card h4 {
-    font-size: 16px;
+    font-size: clamp(15px, 4.5vw, 16px);
   }
 
   .record-card p {
-    font-size: 14px;
+    font-size: clamp(13px, 3.8vw, 14px);
+    overflow-wrap: anywhere;
   }
 
   .photo-modal {
     padding: 15px;
+    box-sizing: border-box;
   }
 
   #large-photo {
@@ -137,18 +170,22 @@
 
   #toggle-record-button {
     margin: 5px auto 20px;
+    max-width: 100%;
   }
 
   #record-list-section {
     margin-top: 20px;
     padding: 18px;
+    box-sizing: border-box;
   }
 
   .list-record-card {
     padding: 14px;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
   }
 
   .list-record-card h3 {
-    font-size: 18px;
+    font-size: clamp(17px, 5vw, 18px);
   }
 }
