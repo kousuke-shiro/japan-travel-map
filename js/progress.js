@@ -1,17 +1,26 @@
 // =========================
-// 全国制覇率
+// 進捗状況を更新
 // =========================
 
 function updateProgress() {
+  // ログイン確認
+  if (
+    typeof currentUser !== "string" ||
+    currentUser.length === 0
+  ) {
+    return;
+  }
+
+  // storage.jsで検証済みのデータを取得
   const visits = getVisits();
 
   const visitedCount =
     Object.keys(visits).length;
 
-  const percent =
-    Math.round(
-      (visitedCount / 47) * 100
-    );
+  // 全国の訪問率
+  const percent = Math.round(
+    (visitedCount / 47) * 100
+  );
 
   progressPercent.textContent =
     percent + "%";
@@ -20,8 +29,11 @@ function updateProgress() {
     percent + "%";
 
   progressCount.textContent =
-    visitedCount +
-    " / 47 都道府県";
+    visitedCount + " / 47 都道府県";
+
+  // =========================
+  // 地方ごとの訪問数
+  // =========================
 
   const regionCounts = {};
 
@@ -33,14 +45,29 @@ function updateProgress() {
 
   Object.keys(visits).forEach(
     (code) => {
-      const region =
-        areas[code];
+      // 念のため都道府県コードを再確認
+      if (!isValidPrefectureCode(code)) {
+        return;
+      }
 
-      if (region) {
+      const region = areas[code];
+
+      // 存在する地方だけを集計
+      if (
+        region &&
+        Object.prototype.hasOwnProperty.call(
+          regionCounts,
+          region
+        )
+      ) {
         regionCounts[region]++;
       }
     }
   );
+
+  // =========================
+  // 地方別進捗を表示
+  // =========================
 
   regionProgress.innerHTML = "";
 

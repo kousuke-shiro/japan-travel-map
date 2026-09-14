@@ -41,10 +41,11 @@
 
   #travel-screen > p:first-of-type {
     position: static;
-    margin: 0 0 15px;
+    margin: 0 0 10px;
     max-width: 100%;
     box-sizing: border-box;
     overflow-wrap: anywhere;
+    text-align: right;
   }
 
   #user-name {
@@ -53,11 +54,11 @@
   }
 
   #logout-button {
-    position: absolute;
-    top: 23px;
-    right: 30px;
-    margin: 0;
+    position: static;
+    display: block;
+    margin: 0 0 15px auto;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   #map {
